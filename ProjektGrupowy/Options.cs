@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace ProjektGrupowy
@@ -13,9 +14,9 @@ namespace ProjektGrupowy
         double p1Speed = 1;
         double p2Speed = 1;
 
-        Color ballColor;
-        Color p1Color;
-        Color p2Color;
+        Color ballColor = Color.FromRgb(255,255,255);
+        Color p1Color = Color.FromRgb(255, 255, 255);
+        Color p2Color = Color.FromRgb(255, 255, 255);
 
         int pointLimit = 10;
         int timeLimit = 60;
