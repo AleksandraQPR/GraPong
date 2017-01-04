@@ -46,17 +46,17 @@ namespace ProjektGrupowy
             }
         }
 
-        private void ballSpeedSliderValue(object sender, RangeBaseValueChangedEventArgs e)
+        private void ballSpeedSliderValue(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             tmpop.BallSpeed = ballSpeedSlider.Value;
         }
 
-        private void p1SpeedSliderValue(object sender, RangeBaseValueChangedEventArgs e)
+        private void p1SpeedSliderValue(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             tmpop.P1Speed = p1SpeedSlider.Value;
         }
 
-        private void p2SpeedSliderValue(object sender, RangeBaseValueChangedEventArgs e)
+        private void p2SpeedSliderValue(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             tmpop.P2Speed = p2SpeedSlider.Value;
         }
