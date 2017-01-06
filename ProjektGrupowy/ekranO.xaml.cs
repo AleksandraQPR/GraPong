@@ -74,6 +74,14 @@ namespace ProjektGrupowy
             return true;
         }
 
+
+        private void closeWindow()
+        {
+            MainWindow M = new MainWindow();
+            this.Close();
+            M.Show();
+        }
+
         private void applySettings_Click(object sender, RoutedEventArgs e)
         {
             // podmiana 
@@ -84,11 +92,13 @@ namespace ProjektGrupowy
             }
             op = tmpop;
             // powrot do ekranu glownego
+            closeWindow();
         }
 
         private void discardSettings_Click(object sender, RoutedEventArgs e)
         {
             // powrot do ekranu glownego
+            closeWindow();
         }
 
     }
