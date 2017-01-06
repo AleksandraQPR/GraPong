@@ -18,7 +18,7 @@ namespace ProjektGrupowy
     /// <summary>
     /// Interaction logic for ekranO.xaml
     /// </summary>
-    public partial class ekranO : Page
+    public partial class ekranO : Window
     {
 
         Options op;
