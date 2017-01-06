@@ -9,22 +9,31 @@
       Title="ekranO">
 
     <Grid Background="#FFFDF9F9">
+        <StackPanel Margin="5">
+            <Label>Player 1 Color</Label>
+            <RadioButton x:Name="p1col1" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF"/>
+            <RadioButton x:Name="p1col2" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208"/>
+            <Label>Player 2 Color</Label>
+            <RadioButton x:Name="p2col1" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF"/>
+            <RadioButton x:Name="p2col2" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208"/>
+            <Label>Ball Color</Label>
+            <RadioButton x:Name="ballcol1" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF"/>
+            <RadioButton x:Name="ballcol2" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208"/>
+        </StackPanel>
         <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" Margin="185,158,0,0"/>
-        <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ball Speed" VerticalAlignment="Top" Margin="65,158,0,0"/>
+        <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ball Speed" VerticalAlignment="Top" Margin="110,160,0,0"/>
 
         <Slider x:Name="p1SpeedSlider" HorizontalAlignment="Left" Margin="185,232,0,0" VerticalAlignment="Top" ValueChanged="p1SpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100"/>
-        <TextBlock x:Name="p1SpeedLabel" HorizontalAlignment="Left" Margin="65,199,0,0" TextWrapping="Wrap" Text="Player1 Speed" VerticalAlignment="Top" />
+        <TextBlock x:Name="p1SpeedLabel" HorizontalAlignment="Left" Margin="90,198,0,0" TextWrapping="Wrap" Text="Player1 Speed" VerticalAlignment="Top" />
 
         <Slider x:Name="p2SpeedSlider" HorizontalAlignment="Left" Margin="185,199,0,0" VerticalAlignment="Top" ValueChanged="p2SpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" />
-        <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="65,232,0,0" TextWrapping="Wrap" Text="Player2 Speed" VerticalAlignment="Top" />
+        <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="90,232,0,0" TextWrapping="Wrap" Text="Player2 Speed" VerticalAlignment="Top" />
 
         <Button x:Name="applySettings" Content="Apply" HorizontalAlignment="Left" Margin="232,585,0,0" VerticalAlignment="Top" Click="applySettings_Click"/>
         <Button x:Name="discardSettings" Content="Cancel" HorizontalAlignment="Left" Margin="45,585,0,0" VerticalAlignment="Top" Click="discardSettings_Click"/>
 
-        <TextBox x:Name="timeLimit" HorizontalAlignment="Left" Margin="190,82,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top"/>
-        <TextBox x:Name="pointLimit" HorizontalAlignment="Left" Margin="65,82,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
-
-        <Rectangle x:Name="p1color1" Fill="#FF00AA" HorizontalAlignment="Left" Height="21" Margin="35,32,0,0" Stroke="Black" VerticalAlignment="Top" Width="39" />
+        <TextBox x:Name="timeLimit" HorizontalAlignment="Left" Margin="185,35,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top"/>
+        <TextBox x:Name="pointLimit" HorizontalAlignment="Left" Margin="146,35,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
