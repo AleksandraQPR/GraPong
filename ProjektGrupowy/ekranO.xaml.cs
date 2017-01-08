@@ -105,7 +105,7 @@ namespace ProjektGrupowy
 
         private void p1col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFF");
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
         }
 
         private void p1col2_Checked(object sender, RoutedEventArgs e)
@@ -115,7 +115,7 @@ namespace ProjektGrupowy
 
         private void p2col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFF");
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
         }
 
         private void p2col2_Checked(object sender, RoutedEventArgs e)
@@ -125,7 +125,7 @@ namespace ProjektGrupowy
 
         private void ballcol1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFF");
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFFFFF");
         }
 
         private void ballcol2_Checked(object sender, RoutedEventArgs e)
