@@ -90,10 +90,11 @@ namespace ProjektGrupowy
             {
                 tmpop.PointLimit = Convert.ToInt32(pointLimit.Text);
                 tmpop.TimeLimit = Convert.ToInt32(timeLimit.Text);
+
+                op = tmpop;
+                // powrot do ekranu glownego
+                closeWindow();
             }
-            op = tmpop;
-            // powrot do ekranu glownego
-            closeWindow();
         }
 
         private void discardSettings_Click(object sender, RoutedEventArgs e)
