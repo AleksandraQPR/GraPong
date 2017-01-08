@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProjektGrupowy"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="405" d:DesignWidth="300"
       Title="ekranO">
 
     <Grid Background="#FFFDF9F9">
-        <StackPanel Margin="5">
+        <StackPanel Margin="5,5,187,181">
             <Label>Player 1 Color</Label>
             <RadioButton x:Name="p1col1" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="p1col1_Checked"/>
             <RadioButton x:Name="p1col2" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="p1col2_Checked"/>
@@ -29,11 +29,14 @@
         <Slider x:Name="p2SpeedSlider" HorizontalAlignment="Left" Margin="185,199,0,0" VerticalAlignment="Top" ValueChanged="p2SpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" />
         <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="90,232,0,0" TextWrapping="Wrap" Text="Player2 Speed" VerticalAlignment="Top" />
 
-        <Button x:Name="applySettings" Content="Apply" HorizontalAlignment="Left" Margin="232,585,0,0" VerticalAlignment="Top" Click="applySettings_Click"/>
-        <Button x:Name="discardSettings" Content="Cancel" HorizontalAlignment="Left" Margin="45,585,0,0" VerticalAlignment="Top" Click="discardSettings_Click"/>
+        <Button x:Name="applySettings" Content="Apply" HorizontalAlignment="Left" Margin="185,300,0,0" VerticalAlignment="Top" Click="applySettings_Click" Height="39" Width="82"/>
+        <Button x:Name="discardSettings" Content="Cancel" HorizontalAlignment="Left" Margin="23,300,0,0" VerticalAlignment="Top" Click="discardSettings_Click" Height="39" Width="73"/>
 
-        <TextBox x:Name="timeLimit" HorizontalAlignment="Left" Margin="185,35,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top"/>
-        <TextBox x:Name="pointLimit" HorizontalAlignment="Left" Margin="146,35,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
+
+        <TextBox x:Name="timeLimit" HorizontalAlignment="Left" Margin="248,47,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top"/>
+        <TextBox x:Name="pointLimit" HorizontalAlignment="Left" Margin="248,12,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
+        <TextBlock x:Name="timeLimitLabel" Text="Time limit" Margin="162,48,55,296"/>
+        <TextBlock x:Name="pointLimitLabel" Text="Point limit" Margin="162,13,42,333"/>
 
     </Grid>
 </Window>
