@@ -74,6 +74,7 @@ namespace ProjektGrupowy
             return true;
         }
 
+        
 
         private void closeWindow()
         {
@@ -101,5 +102,34 @@ namespace ProjektGrupowy
             closeWindow();
         }
 
+        private void p1col1_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFF");
+        }
+
+        private void p1col2_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFB208");
+        }
+
+        private void p2col1_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFF");
+        }
+
+        private void p2col2_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFB208");
+        }
+
+        private void ballcol1_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFF");
+        }
+
+        private void ballcol2_Checked(object sender, RoutedEventArgs e)
+        {
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFB208");
+        }
     }
 }
