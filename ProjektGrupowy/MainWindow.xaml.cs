@@ -29,5 +29,17 @@ namespace ProjektGrupowy
         {
 
         }
+
+        private void Opcje_Click(object sender, RoutedEventArgs e)
+        {
+            ekranO ekran = new ekranO();
+            ekran.ShowDialog();
+        }
+
+        private void O_autorach_Click(object sender, RoutedEventArgs e)
+        {
+            AboutA ekran = new AboutA();
+            ekran.ShowDialog();
+        }
     }
 }
