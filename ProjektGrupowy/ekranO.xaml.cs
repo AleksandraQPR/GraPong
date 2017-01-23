@@ -26,11 +26,12 @@ namespace ProjektGrupowy
 
         public ekranO()
         {
-            InitializeComponent();
             tmpop = new Options();
             ballSpeedSlider.Value = tmpop.BallSpeed;
             p1SpeedSlider.Value = tmpop.P1Speed;
             p2SpeedSlider.Value = tmpop.P2Speed;
+
+            InitializeComponent();
         }
 
         internal Options Op
