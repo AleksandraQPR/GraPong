@@ -39,7 +39,7 @@ namespace ProjektGrupowy
 
         private void Opcje_Click(object sender, RoutedEventArgs e)
         {
-            //ekranO ekran = new ekranO();
+            ekranO ekran = new ekranO();
             ekran.ShowDialog();
         }
 
