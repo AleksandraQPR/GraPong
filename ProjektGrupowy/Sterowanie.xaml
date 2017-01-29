@@ -8,7 +8,8 @@
         Title="Sterowanie" Height="350" Width="525">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" TextWrapping="Wrap" Text="habababababaab babababba zasady gry albo cos w ten desen" VerticalAlignment="Top" Width="498"/>
-        <Image x:Name="stery" HorizontalAlignment="Left" Height="148" Margin="120,150,0,0" VerticalAlignment="Top" Width="344" Source="/stery.jpg"/>
+        <Image x:Name="stery" HorizontalAlignment="Left" Height="148" Margin="29,154,0,0" VerticalAlignment="Top" Width="273" Source="/stery.jpg"/>
+        <Button x:Name="button" Content="ok, rozumiem!" HorizontalAlignment="Left" Height="34" Margin="381,251,0,0" VerticalAlignment="Top" Width="94" Click="button_Click"/>
 
     </Grid>
 </Window>

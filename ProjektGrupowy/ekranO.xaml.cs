@@ -80,9 +80,9 @@ namespace ProjektGrupowy
 
         private void closeWindow()
         {
-            MainWindow M = new MainWindow();
+            //MainWindow M = new MainWindow();
             this.Close();
-            M.Show();
+            //M.Show();
         }
 
         private void applySettings_Click(object sender, RoutedEventArgs e)
@@ -102,7 +102,8 @@ namespace ProjektGrupowy
         private void discardSettings_Click(object sender, RoutedEventArgs e)
         {
             // powrot do ekranu glownego
-            closeWindow();
+             closeWindow();
+           
         }
 
         private void p1col1_Checked(object sender, RoutedEventArgs e)

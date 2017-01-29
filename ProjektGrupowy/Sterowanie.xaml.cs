@@ -23,5 +23,11 @@ namespace ProjektGrupowy
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            //this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+        }
     }
 }
