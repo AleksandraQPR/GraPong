@@ -1,0 +1,14 @@
+﻿<Window x:Class="ProjektGrupowy.Sterowanie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektGrupowy"
+        mc:Ignorable="d"
+        Title="Sterowanie" Height="350" Width="525">
+    <Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" TextWrapping="Wrap" Text="habababababaab babababba zasady gry albo cos w ten desen" VerticalAlignment="Top" Width="498"/>
+        <Image x:Name="stery" HorizontalAlignment="Left" Height="148" Margin="120,150,0,0" VerticalAlignment="Top" Width="344" Source="/stery.jpg"/>
+
+    </Grid>
+</Window>

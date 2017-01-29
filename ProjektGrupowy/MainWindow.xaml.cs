@@ -48,5 +48,11 @@ namespace ProjektGrupowy
             AboutA ekran = new AboutA();
             ekran.ShowDialog();
         }
+
+        private void Pomoc_Click(object sender, RoutedEventArgs e)
+        {
+            Sterowanie ekran = new Sterowanie();
+            ekran.ShowDialog();
+        }
     }
 }
