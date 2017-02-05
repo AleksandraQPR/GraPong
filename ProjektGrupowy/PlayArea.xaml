@@ -41,8 +41,8 @@
         </ProgressBar>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="286" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Canvas>
         <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text="0 : 0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB7DEB1" Grid.ColumnSpan="2"/>
         <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFA0CB97" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
