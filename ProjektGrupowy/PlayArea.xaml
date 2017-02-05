@@ -41,7 +41,7 @@
             </ProgressBar.Foreground>
         </ProgressBar>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="286" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="250" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Canvas>
