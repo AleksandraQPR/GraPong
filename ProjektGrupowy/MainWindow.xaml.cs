@@ -34,7 +34,7 @@ namespace ProjektGrupowy
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void Opcje_Click(object sender, RoutedEventArgs e)
