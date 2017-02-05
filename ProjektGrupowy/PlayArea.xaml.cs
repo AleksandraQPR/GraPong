@@ -23,5 +23,24 @@ namespace ProjektGrupowy
         {
             InitializeComponent();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Ruch na dół lewej paletki
+            if (e.Key == Key.S)
+            {
+                double goDownL = Canvas.GetTop(paddleLeft) + 5;
+                if (goDownL < (areaOfGame.ActualHeight - paddleLeft.ActualHeight))
+                    Canvas.SetTop(paddleLeft, goDownL);
+            }
+            // Ruch do góry lewej paletki
+            if (e.Key == Key.W)
+            {
+                double goUpL = Canvas.GetTop(paddleLeft) - 5;
+                if (goUpL > 0)
+                    Canvas.SetTop(paddleLeft, goUpL);
+            }
+
+        }
     }
 }
