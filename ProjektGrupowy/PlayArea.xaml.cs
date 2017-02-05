@@ -40,7 +40,20 @@ namespace ProjektGrupowy
                 if (goUpL > 0)
                     Canvas.SetTop(paddleLeft, goUpL);
             }
-
+            // Ruch na dół prawej paletki
+            if (e.Key == Key.Down)
+            {
+                double goDownP = Canvas.GetTop(paddleRight) + 5;
+                if (goDownP < (areaOfGame.ActualHeight - paddleRight.ActualHeight))
+                    Canvas.SetTop(paddleRight, goDownP);
+            }
+            // Ruch do góry prawej paletki
+            if (e.Key == Key.Up)
+            {
+                double goUpP = Canvas.GetTop(paddleRight) - 5;
+                if (goUpP > 0)
+                    Canvas.SetTop(paddleRight, goUpP);
+            }
         }
     }
 }
