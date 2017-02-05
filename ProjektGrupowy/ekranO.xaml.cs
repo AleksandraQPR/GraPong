@@ -93,7 +93,16 @@ namespace ProjektGrupowy
                 tmpop.PointLimit = Convert.ToInt32(pointLimit.Text);
                 tmpop.TimeLimit = Convert.ToInt32(timeLimit.Text);
 
-                op = tmpop;
+                //op = tmpop;
+                //przypisanie opcji
+                op.BallColor = tmpop.BallColor;
+                op.BallSpeed = tmpop.BallSpeed;
+                op.P1Color = tmpop.P1Color;
+                op.P1Speed = tmpop.P1Speed;
+                op.P2Color = tmpop.P2Color;
+                op.P2Speed = tmpop.P2Speed;
+                op.PointLimit = tmpop.PointLimit;
+                op.TimeLimit = tmpop.TimeLimit;
                 // powrot do ekranu glownego
                 closeWindow();
             }
