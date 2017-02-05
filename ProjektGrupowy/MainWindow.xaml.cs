@@ -25,9 +25,8 @@ namespace ProjektGrupowy
 
         public MainWindow()
         {
-            ekran = new ekranO();
+            
             opcje = new Options();
-            ekran.Op = opcje;
 
             InitializeComponent();
         }
@@ -40,6 +39,7 @@ namespace ProjektGrupowy
         private void Opcje_Click(object sender, RoutedEventArgs e)
         {
             ekranO ekran = new ekranO();
+            ekran.Op = opcje;
             ekran.ShowDialog();
         }
 
