@@ -33,11 +33,21 @@ namespace ProjektGrupowy
         {
             InitializeComponent();
             //this.Loaded += ChallengePage_Loaded;
+            StartMovingBall();
 
-            goBallDirectionX = randomX.Next(0,2);    // losowa liczba 0 lub 1
-            goBallDirectionY = randomY.Next(0,2);    // losowa liczba 0 lub 1
 
-            BallMovingTimer();   
+        }
+
+        private void StartMovingBall()
+        {
+            double startPositionBallLeft = areaOfGame.ActualWidth / 2;
+            double startPositionBallTop = areaOfGame.ActualHeight / 2;
+
+            Canvas.SetLeft(ball, startPositionBallLeft);
+            Canvas.SetTop(ball, startPositionBallTop);
+            goBallDirectionX = randomX.Next(0, 2);    // losowa liczba 0 lub 1
+            goBallDirectionY = randomY.Next(0, 2);    // losowa liczba 0 lub 1
+            BallMovingTimer();
         }
 
         private void BallMovingTimer()
