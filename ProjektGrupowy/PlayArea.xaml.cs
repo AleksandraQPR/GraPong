@@ -29,6 +29,11 @@ namespace ProjektGrupowy
         private double goX;
         private double goY;
 
+        private double startPositionBallLeft;
+        private double startPositionBallTop;
+
+        System.Windows.Threading.DispatcherTimer dispatcherTimer;
+
         public PlayArea()
         {
             InitializeComponent();
@@ -42,8 +47,8 @@ namespace ProjektGrupowy
 
         private void StartMovingBall()
         {
-            double startPositionBallLeft = areaOfGame.ActualWidth / 2;
-            double startPositionBallTop = areaOfGame.ActualHeight / 2;
+            startPositionBallLeft = areaOfGame.ActualWidth / 2;
+            startPositionBallTop = areaOfGame.ActualHeight / 2;
 
             Canvas.SetLeft(ball, startPositionBallLeft);
             Canvas.SetTop(ball, startPositionBallTop);
@@ -54,7 +59,7 @@ namespace ProjektGrupowy
 
         private void BallMovingTimer()
         {
-            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 5);   // czas w milisekundach
             dispatcherTimer.Start();
@@ -63,14 +68,14 @@ namespace ProjektGrupowy
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             if (goBallDirectionX == 0)      // piłka przemieszcza się w lewo
-                goX = Canvas.GetLeft(ball) - 5;
+                goX = Canvas.GetLeft(ball) - 1;
             else                            // piłka przemieszcza się w prawo
-                goX = Canvas.GetLeft(ball) + 5;
+                goX = Canvas.GetLeft(ball) + 1;
 
             if (goBallDirectionY == 0)      // piłka przemieszcza się na dół
-                goY = Canvas.GetTop(ball) + 5;
+                goY = Canvas.GetTop(ball) + 1;
             else                            // piłka przemieszcza się do góry
-                goY = Canvas.GetTop(ball) - 5;
+                goY = Canvas.GetTop(ball) - 1;
 
             if (goX > 0 && goX < areaOfGame.ActualWidth && goY > 0 && goY < areaOfGame.ActualHeight)
             {
@@ -78,13 +83,27 @@ namespace ProjektGrupowy
                 Canvas.SetTop(ball, goY);
             }
             else if (goX <= 0)
-                goBallDirectionX = 1;
+            {
+                //goBallDirectionX = 1;
+                StopMovingBall();
+                StartMovingBall();
+            }
             else if (goX >= areaOfGame.ActualWidth)
-                goBallDirectionX = 0;
+            {
+                //goBallDirectionX = 0;
+                StopMovingBall();
+                StartMovingBall();
+            }
+
             else if (goY <= 0)
                 goBallDirectionY = 0;
             else
                 goBallDirectionY = 1;
+        }
+
+        private void StopMovingBall()
+        {
+            dispatcherTimer.Stop();
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
