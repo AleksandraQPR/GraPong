@@ -21,8 +21,8 @@ namespace ProjektGrupowy
     public partial class PlayArea : Window
     {
         //private Storyboard myStoryboard;
-        Random randomX = new Random();      
-        Random randomY = new Random();
+        Random randomX = new Random();      // losowy wybór początkowego kierunku piłki na osi X
+        Random randomY = new Random();      // losowy wybór początkowego kierunku piłki na osi Y
         private int goBallDirectionX;
         private int goBallDirectionY;
 
@@ -50,14 +50,14 @@ namespace ProjektGrupowy
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if (goBallDirectionX == 0)
+            if (goBallDirectionX == 0)      // piłka przemieszcza się w lewo
                 goX = Canvas.GetLeft(ball) - 5;
-            else
+            else                            // piłka przemieszcza się w prawo
                 goX = Canvas.GetLeft(ball) + 5;
 
-            if (goBallDirectionY == 0)
+            if (goBallDirectionY == 0)      // piłka przemieszcza się na dół
                 goY = Canvas.GetTop(ball) + 5;
-            else
+            else                            // piłka przemieszcza się do góry
                 goY = Canvas.GetTop(ball) - 5;
 
             if (goX > 0 && goX < areaOfGame.ActualWidth && goY > 0 && goY < areaOfGame.ActualHeight)
