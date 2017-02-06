@@ -20,38 +20,59 @@ namespace ProjektGrupowy
     /// </summary>
     public partial class PlayArea : Window
     {
-        private Storyboard myStoryboard;
-        Random random = new Random();
-        
+        //private Storyboard myStoryboard;
+        Random randomX = new Random();      
+        Random randomY = new Random();
+        private int goBallDirectionX;
+        private int goBallDirectionY;
+
+        private double goX;
+        private double goY;
 
         public PlayArea()
         {
             InitializeComponent();
-            this.Loaded += ChallengePage_Loaded;
+            //this.Loaded += ChallengePage_Loaded;
+
+            goBallDirectionX = randomX.Next(0,2);    // losowa liczba 0 lub 1
+            goBallDirectionY = randomY.Next(0,2);    // losowa liczba 0 lub 1
+
+            BallMovingTimer();   
         }
 
-        // Należy poczekać aż całe okno sie wgra w celu uzyskania parametrów okna gry
-        private void ChallengePage_Loaded(object sender, RoutedEventArgs e)
+        private void BallMovingTimer()
         {
-            double startPositionOfBall_X = areaOfGame.ActualWidth / 2 - ball.ActualWidth / 2;
-
-            BallAnimation(0, areaOfGame.ActualWidth, new PropertyPath(Canvas.LeftProperty));
-            BallAnimation(random.Next((int)areaOfGame.ActualHeight), random.Next((int)areaOfGame.ActualHeight), new PropertyPath(Canvas.TopProperty));
+            System.Windows.Threading.DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 5);   // czas w milisekundach
+            dispatcherTimer.Start();
         }
-        private void BallAnimation(double from, double to, PropertyPath property)
-        {
-            DoubleAnimation myDoubleAnimation = new DoubleAnimation();
-            myDoubleAnimation.From = from;
-            myDoubleAnimation.To = to;
-            myDoubleAnimation.Duration = new Duration(TimeSpan.FromSeconds(3));
-            myDoubleAnimation.AutoReverse = true;
-          //  myDoubleAnimation.RepeatBehavior = RepeatBehavior.Forever;
 
-            myStoryboard = new Storyboard();
-            myStoryboard.Children.Add(myDoubleAnimation);
-            Storyboard.SetTargetName(myDoubleAnimation, "ball");
-            Storyboard.SetTargetProperty(myDoubleAnimation, property);
-            myStoryboard.Begin(ball);
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            if (goBallDirectionX == 0)
+                goX = Canvas.GetLeft(ball) - 5;
+            else
+                goX = Canvas.GetLeft(ball) + 5;
+
+            if (goBallDirectionY == 0)
+                goY = Canvas.GetTop(ball) + 5;
+            else
+                goY = Canvas.GetTop(ball) - 5;
+
+            if (goX > 0 && goX < areaOfGame.ActualWidth && goY > 0 && goY < areaOfGame.ActualHeight)
+            {
+                Canvas.SetLeft(ball, goX);
+                Canvas.SetTop(ball, goY);
+            }
+            else if (goX <= 0)
+                goBallDirectionX = 1;
+            else if (goX >= areaOfGame.ActualWidth)
+                goBallDirectionX = 0;
+            else if (goY <= 0)
+                goBallDirectionY = 0;
+            else
+                goBallDirectionY = 1;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
