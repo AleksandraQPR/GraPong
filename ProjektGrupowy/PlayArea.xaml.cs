@@ -32,10 +32,12 @@ namespace ProjektGrupowy
         public PlayArea()
         {
             InitializeComponent();
-            //this.Loaded += ChallengePage_Loaded;
+            this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
+
+        }
+        void ChallengePage_Loaded(object sender, RoutedEventArgs e)
+        {
             StartMovingBall();
-
-
         }
 
         private void StartMovingBall()
