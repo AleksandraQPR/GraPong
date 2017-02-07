@@ -20,7 +20,6 @@ namespace ProjektGrupowy
     /// </summary>
     public partial class PlayArea : Window
     {
-        //private Storyboard myStoryboard;
         Random randomX = new Random();      // losowy wybór początkowego kierunku piłki na osi X
         Random randomY = new Random();      // losowy wybór początkowego kierunku piłki na osi Y
         private int goBallDirectionX;
@@ -37,6 +36,7 @@ namespace ProjektGrupowy
         public PlayArea()
         {
             InitializeComponent();
+            CraatingMovingBallTimer();
             this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
 
         }
@@ -47,6 +47,7 @@ namespace ProjektGrupowy
 
         private void StartMovingBall()
         {
+
             startPositionBallLeft = areaOfGame.ActualWidth / 2;
             startPositionBallTop = areaOfGame.ActualHeight / 2;
 
@@ -54,43 +55,58 @@ namespace ProjektGrupowy
             Canvas.SetTop(ball, startPositionBallTop);
             goBallDirectionX = randomX.Next(0, 2);    // losowa liczba 0 lub 1
             goBallDirectionY = randomY.Next(0, 2);    // losowa liczba 0 lub 1
-            BallMovingTimer();
+            dispatcherTimer.Start();
+
         }
 
-        private void BallMovingTimer()
+        private void CraatingMovingBallTimer()
         {
             dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 5);   // czas w milisekundach
-            dispatcherTimer.Start();
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+        }
+
+        private void setNewPosition()
+        {
+            if (goBallDirectionX == 0)      // piłka przemieszcza się w lewo
+                goX = Canvas.GetLeft(ball) - 5;
+            else                            // piłka przemieszcza się w prawo
+                goX = Canvas.GetLeft(ball) + 5;
+
+            if (goBallDirectionY == 0)      // piłka przemieszcza się na dół
+                goY = Canvas.GetTop(ball) + 5;
+            else                            // piłka przemieszcza się do góry
+                goY = Canvas.GetTop(ball) - 5;
         }
 
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
-            if (goBallDirectionX == 0)      // piłka przemieszcza się w lewo
-                goX = Canvas.GetLeft(ball) - 1;
-            else                            // piłka przemieszcza się w prawo
-                goX = Canvas.GetLeft(ball) + 1;
-
-            if (goBallDirectionY == 0)      // piłka przemieszcza się na dół
-                goY = Canvas.GetTop(ball) + 1;
-            else                            // piłka przemieszcza się do góry
-                goY = Canvas.GetTop(ball) - 1;
+            setNewPosition();
 
             if (goX > 0 && goX < areaOfGame.ActualWidth && goY > 0 && goY < areaOfGame.ActualHeight)
             {
+                if (ColisionDetectionLeft(paddleLeft, ball) == true)
+                {
+                    goBallDirectionX = 1;
+                    setNewPosition();
+                }
+                if (ColisionDetectionRight(paddleRight, ball) == true)
+                {
+                    goBallDirectionX = 0;
+                    setNewPosition();
+                }
+
                 Canvas.SetLeft(ball, goX);
                 Canvas.SetTop(ball, goY);
             }
+            
             else if (goX <= 0)
             {
-                //goBallDirectionX = 1;
                 StopMovingBall();
                 StartMovingBall();
             }
             else if (goX >= areaOfGame.ActualWidth)
             {
-                //goBallDirectionX = 0;
                 StopMovingBall();
                 StartMovingBall();
             }
@@ -104,6 +120,44 @@ namespace ProjektGrupowy
         private void StopMovingBall()
         {
             dispatcherTimer.Stop();
+        }
+
+       private bool ColisionDetectionLeft(Rectangle paddle, Ellipse ball)
+        {
+            double paddleBottom = Canvas.GetTop(paddle) + paddle.Height;
+            double paddleTop = Canvas.GetTop(paddle);
+            double paddleLeft = Canvas.GetLeft(paddle);
+            double paddleRight = Canvas.GetLeft(paddle) + paddle.Width;
+
+            double ballBottom = Canvas.GetTop(ball) + ball.Height;
+            double ballTop = Canvas.GetTop(ball);
+            double ballLeft = Canvas.GetLeft(ball);
+            double ballRight = Canvas.GetLeft(ball) + ball.Width;
+
+            // Kolizja z lewej strony
+            if (ballLeft <= paddleRight && ballBottom >= paddleTop && ballTop <= paddleBottom)
+                return true;
+            else
+                return false;
+        }
+
+        private bool ColisionDetectionRight(Rectangle paddle, Ellipse ball)
+        {
+            double paddleBottom = Canvas.GetTop(paddle) + paddle.Height;
+            double paddleTop = Canvas.GetTop(paddle);
+            double paddleLeft = Canvas.GetLeft(paddle);
+            double paddleRight = Canvas.GetLeft(paddle) + paddle.Width;
+
+            double ballBottom = Canvas.GetTop(ball) + ball.Height;
+            double ballTop = Canvas.GetTop(ball);
+            double ballLeft = Canvas.GetLeft(ball);
+            double ballRight = Canvas.GetLeft(ball) + ball.Width;
+
+            // Kolizja z prawej strony
+            if (ballRight >= paddleLeft && ballBottom >= paddleTop && ballTop <= paddleBottom)
+                return true;
+            else
+                return false;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
