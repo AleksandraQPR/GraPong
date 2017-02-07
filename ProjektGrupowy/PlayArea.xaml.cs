@@ -47,7 +47,6 @@ namespace ProjektGrupowy
 
         private void StartMovingBall()
         {
-
             startPositionBallLeft = areaOfGame.ActualWidth / 2;
             startPositionBallTop = areaOfGame.ActualHeight / 2;
 
