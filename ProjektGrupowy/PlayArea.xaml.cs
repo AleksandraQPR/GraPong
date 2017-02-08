@@ -20,6 +20,8 @@ namespace ProjektGrupowy
     /// </summary>
     public partial class PlayArea : Window
     {
+        const double paddleOffset = 12;
+
         Random randomX = new Random();      // losowy wybór początkowego kierunku piłki na osi X
         Random randomY = new Random();      // losowy wybór początkowego kierunku piłki na osi Y
         private int goBallDirectionX;
@@ -64,19 +66,29 @@ namespace ProjektGrupowy
         {
             gameTimer.Stop();
             StopMovingBall();
-            MessageBox.Show("Koniec gry");
+            GameOverInfo.Visibility = Visibility.Visible;
         }
 
         void ChallengePage_Loaded(object sender, RoutedEventArgs e)
         {
+            SetStartPositionOfPaddels();
             StartMovingBall();
             gameTimer.Start();
         }
 
+        private void SetStartPositionOfPaddels()
+        {
+            Canvas.SetLeft(paddleLeft, paddleOffset);
+            Canvas.SetTop(paddleLeft, areaOfGame.ActualHeight / 2 - paddleLeft.Height / 2);
+
+            Canvas.SetLeft(paddleRight, areaOfGame.ActualWidth - paddleOffset - paddleRight.Width);
+            Canvas.SetTop(paddleRight, areaOfGame.ActualHeight / 2 - paddleRight.Height / 2);
+        }
+
         private void StartMovingBall()
         {
-            startPositionBallLeft = areaOfGame.ActualWidth / 2;
-            startPositionBallTop = areaOfGame.ActualHeight / 2;
+            startPositionBallLeft = areaOfGame.ActualWidth / 2 - ball.Width;
+            startPositionBallTop = areaOfGame.ActualHeight / 2 - ball.Height;
 
             Canvas.SetLeft(ball, startPositionBallLeft);
             Canvas.SetTop(ball, startPositionBallTop);
