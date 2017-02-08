@@ -34,6 +34,9 @@ namespace ProjektGrupowy
         System.Windows.Threading.DispatcherTimer ballTimer;
         System.Windows.Threading.DispatcherTimer gameTimer;
 
+        private int pointLeft = 0;
+        private int pointRight = 0;
+
         public PlayArea()
         {
             InitializeComponent();
@@ -127,11 +130,13 @@ namespace ProjektGrupowy
             else if (goX <= 0)
             {
                 StopMovingBall();
+                PointForRightPlayer();
                 StartMovingBall();
             }
             else if (goX >= areaOfGame.ActualWidth)
             {
                 StopMovingBall();
+                PointForLeftPlayer();
                 StartMovingBall();
             }
 
@@ -182,6 +187,18 @@ namespace ProjektGrupowy
                 return true;
             else
                 return false;
+        }
+
+        private void PointForLeftPlayer()
+        {
+            pointLeft++;
+            resultPointers.Text = pointLeft + " : " + pointRight;
+        }
+
+        private void PointForRightPlayer()
+        {
+            pointRight++;
+            resultPointers.Text = pointLeft + " : " + pointRight;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
