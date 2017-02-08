@@ -35,7 +35,6 @@ namespace ProjektGrupowy
         {
             PlayArea playArea = new PlayArea();
             playArea.ShowDialog();
-            this.Close();
         }
 
         private void Opcje_Click(object sender, RoutedEventArgs e)

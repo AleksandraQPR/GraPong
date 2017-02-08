@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjektGrupowy"
         mc:Ignorable="d"
         Title="Rozgrywka" Height="380" Width="580
-        ">
+        " KeyDown="Window_KeyDown" ResizeMode="NoResize">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="Black" Offset="0"/>
@@ -16,36 +16,21 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="307*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <ProgressBar Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left">
-            <ProgressBar.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#FFA0CB97" Offset="0.608"/>
-                    <GradientStop Color="#FFB21919" Offset="0.114"/>
-                </LinearGradientBrush>
-            </ProgressBar.Foreground>
-        </ProgressBar>
+        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20" Foreground="#FFCD3131"/>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="286" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="250" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="125" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="216" Canvas.Top="26" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="GameOverInfo" TextWrapping="Wrap" Text="Koniec Gry" FontWeight="Bold" FontSize="36" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="259" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="150" Canvas.Top="103" HorizontalAlignment="Left" Visibility="Hidden"/>
         </Canvas>
-        <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text="0 : 0" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFB7DEB1" Grid.ColumnSpan="2"/>
-        <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFA0CB97" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFA0CB97" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,8"/>
 
     </Grid>
 </Window>
