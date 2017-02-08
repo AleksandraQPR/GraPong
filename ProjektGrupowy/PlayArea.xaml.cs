@@ -31,18 +31,43 @@ namespace ProjektGrupowy
         private double startPositionBallLeft;
         private double startPositionBallTop;
 
-        System.Windows.Threading.DispatcherTimer dispatcherTimer;
+        System.Windows.Threading.DispatcherTimer ballTimer;
+        System.Windows.Threading.DispatcherTimer gameTimer;
 
         public PlayArea()
         {
             InitializeComponent();
+            CreatingGameTimer();
             CraatingMovingBallTimer();
             this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
 
         }
+
+        private void CreatingGameTimer()
+        {
+            gameTimer = new System.Windows.Threading.DispatcherTimer();
+            gameTimer.Tick += new EventHandler(gameTimer_Tick);
+            gameTimer.Interval = new TimeSpan(0, 0, 0, 1);   // czas w sekundach
+        }
+
+        private void gameTimer_Tick(object sender, EventArgs e)
+        {
+            progressBar.Value += 1;
+            if (progressBar.Value >= progressBar.Maximum)
+                StopTheGame();
+        }
+
+        private void StopTheGame()
+        {
+            gameTimer.Stop();
+            StopMovingBall();
+            MessageBox.Show("Koniec gry");
+        }
+
         void ChallengePage_Loaded(object sender, RoutedEventArgs e)
         {
             StartMovingBall();
+            gameTimer.Start();
         }
 
         private void StartMovingBall()
@@ -54,15 +79,15 @@ namespace ProjektGrupowy
             Canvas.SetTop(ball, startPositionBallTop);
             goBallDirectionX = randomX.Next(0, 2);    // losowa liczba 0 lub 1
             goBallDirectionY = randomY.Next(0, 2);    // losowa liczba 0 lub 1
-            dispatcherTimer.Start();
+            ballTimer.Start();
 
         }
 
         private void CraatingMovingBallTimer()
         {
-            dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+            ballTimer = new System.Windows.Threading.DispatcherTimer();
+            ballTimer.Tick += new EventHandler(ballTimer_Tick);
+            ballTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
         }
 
         private void setNewPosition()
@@ -78,7 +103,7 @@ namespace ProjektGrupowy
                 goY = Canvas.GetTop(ball) - 5;
         }
 
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        private void ballTimer_Tick(object sender, EventArgs e)
         {
             setNewPosition();
 
@@ -118,7 +143,7 @@ namespace ProjektGrupowy
 
         private void StopMovingBall()
         {
-            dispatcherTimer.Stop();
+            ballTimer.Stop();
         }
 
        private bool ColisionDetectionLeft(Rectangle paddle, Ellipse ball)
