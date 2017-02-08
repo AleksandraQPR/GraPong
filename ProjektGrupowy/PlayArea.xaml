@@ -22,22 +22,7 @@
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20">
-            <ProgressBar.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#FFA0CB97" Offset="0.608"/>
-                    <GradientStop Color="#FFB21919" Offset="0.114"/>
-                </LinearGradientBrush>
-            </ProgressBar.Foreground>
-        </ProgressBar>
+        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20" Foreground="#FFCD3131"/>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="250" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
