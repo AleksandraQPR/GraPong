@@ -27,8 +27,8 @@
             <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="250" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="125" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="216" Canvas.Top="26" HorizontalAlignment="Left"/>
         </Canvas>
-        <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFB7DEB1" Grid.Column="1" Margin="156,24,264,256" Panel.ZIndex="50" Width="54" Padding="2" RenderTransformOrigin="0.828,0.658" HorizontalAlignment="Center"/>
         <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFA0CB97" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,8"/>
 
     </Grid>
