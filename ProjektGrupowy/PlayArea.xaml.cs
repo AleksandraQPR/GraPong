@@ -138,7 +138,8 @@ namespace ProjektGrupowy
         {
             setNewPosition();
 
-            if (goX > 0 && goX < areaOfGame.ActualWidth && goY > 0 && goY < areaOfGame.ActualHeight)
+            if (goX > 0 && goX < areaOfGame.ActualWidth - ball.ActualWidth && goY > 0 && 
+                goY < areaOfGame.ActualHeight - ball.ActualHeight)
             {
                 if (ColisionDetectionLeft(paddleLeft, ball) == true)
                 {
@@ -161,7 +162,7 @@ namespace ProjektGrupowy
                 PointForRightPlayer();
                 StartMovingBall();
             }
-            else if (goX >= areaOfGame.ActualWidth)
+            else if (goX >= areaOfGame.ActualWidth - ball.ActualWidth)
             {
                 StopMovingBall();
                 PointForLeftPlayer();
