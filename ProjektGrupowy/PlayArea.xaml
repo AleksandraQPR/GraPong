@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20" Foreground="#FFCD3131"/>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="250" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="234" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="125" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="216" Canvas.Top="26" HorizontalAlignment="Left"/>

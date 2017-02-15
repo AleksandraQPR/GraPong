@@ -33,7 +33,8 @@ namespace ProjektGrupowy
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            PlayArea playArea = new PlayArea();
+            PlayArea playArea = new PlayArea(opcje.BallSpeed, opcje.P1Speed, opcje.P2Speed,
+                opcje.BallColor, opcje.P1Color, opcje.P2Color, opcje.PointLimit, opcje.TimeLimit);
             playArea.ShowDialog();
         }
 

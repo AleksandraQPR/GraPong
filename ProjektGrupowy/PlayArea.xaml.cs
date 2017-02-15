@@ -20,7 +20,11 @@ namespace ProjektGrupowy
     /// </summary>
     public partial class PlayArea : Window
     {
-        private int pointLimit = 5;
+        private double ballSpeed;
+        private double p1Speed;
+        private double p2Speed;
+        private int pointLimit;
+        private int timeLimit;
 
         const double paddleOffset = 12;
 
@@ -41,9 +45,19 @@ namespace ProjektGrupowy
         private int pointLeft = 0;
         private int pointRight = 0;
 
-        public PlayArea()
+        public PlayArea(double ballSpeed, double p1Speed, double p2Speed, 
+            Color ballColor, Color p1Color, Color p2Color, int pointLimit, int timeLimit)
         {
             InitializeComponent();
+            this.ballSpeed = ballSpeed;
+            this.p1Speed = p1Speed;
+            this.p2Speed = p2Speed;
+            ball.Fill = new SolidColorBrush(ballColor);
+            paddleLeft.Fill = new SolidColorBrush(p1Color);
+            paddleRight.Fill = new SolidColorBrush(p2Color);
+            this.pointLimit = pointLimit;
+            progressBar.Maximum = timeLimit;
+
             CreatingGameTimer();
             CraatingMovingBallTimer();
             this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
@@ -110,14 +124,14 @@ namespace ProjektGrupowy
         private void setNewPosition()
         {
             if (goBallDirectionX == 0)      // piłka przemieszcza się w lewo
-                goX = Canvas.GetLeft(ball) - 5;
+                goX = Canvas.GetLeft(ball) - ballSpeed;
             else                            // piłka przemieszcza się w prawo
-                goX = Canvas.GetLeft(ball) + 5;
+                goX = Canvas.GetLeft(ball) + ballSpeed;
 
             if (goBallDirectionY == 0)      // piłka przemieszcza się na dół
-                goY = Canvas.GetTop(ball) + 5;
+                goY = Canvas.GetTop(ball) + ballSpeed;
             else                            // piłka przemieszcza się do góry
-                goY = Canvas.GetTop(ball) - 5;
+                goY = Canvas.GetTop(ball) - ballSpeed;
         }
 
         private void ballTimer_Tick(object sender, EventArgs e)
@@ -220,28 +234,28 @@ namespace ProjektGrupowy
             // Ruch na dół lewej paletki
             if (e.Key == Key.S)
             {
-                double goDownL = Canvas.GetTop(paddleLeft) + 5;
+                double goDownL = Canvas.GetTop(paddleLeft) + p1Speed;
                 if (goDownL < (areaOfGame.ActualHeight - paddleLeft.ActualHeight))
                     Canvas.SetTop(paddleLeft, goDownL);
             }
             // Ruch do góry lewej paletki
             if (e.Key == Key.W)
             {
-                double goUpL = Canvas.GetTop(paddleLeft) - 5;
+                double goUpL = Canvas.GetTop(paddleLeft) - p1Speed;
                 if (goUpL > 0)
                     Canvas.SetTop(paddleLeft, goUpL);
             }
             // Ruch na dół prawej paletki
             if (e.Key == Key.Down)
             {
-                double goDownP = Canvas.GetTop(paddleRight) + 5;
+                double goDownP = Canvas.GetTop(paddleRight) + p2Speed;
                 if (goDownP < (areaOfGame.ActualHeight - paddleRight.ActualHeight))
                     Canvas.SetTop(paddleRight, goDownP);
             }
             // Ruch do góry prawej paletki
             if (e.Key == Key.Up)
             {
-                double goUpP = Canvas.GetTop(paddleRight) - 5;
+                double goUpP = Canvas.GetTop(paddleRight) - p2Speed;
                 if (goUpP > 0)
                     Canvas.SetTop(paddleRight, goUpP);
             }
