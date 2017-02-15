@@ -11,14 +11,14 @@
     <Grid Background="#FFFDF9F9">
         <StackPanel Margin="5,5,187,200">
             <Label>Kolor Gracza 1</Label>
-            <RadioButton x:Name="p1col1" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="p1col1_Checked" IsChecked="True" />
-            <RadioButton x:Name="p1col2" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="p1col2_Checked"/>
+            <RadioButton x:Name="p1col1" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF5742" Checked="p1col1_Checked" IsChecked="True" />
+            <RadioButton x:Name="p1col2" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5D79A" Checked="p1col2_Checked"/>
             <Label>Kolor Gracza 2</Label>
-            <RadioButton x:Name="p2col1" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="p2col1_Checked" IsChecked="True"/>
-            <RadioButton x:Name="p2col2" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="p2col2_Checked" />
+            <RadioButton x:Name="p2col1" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF5742" Checked="p2col1_Checked" IsChecked="True"/>
+            <RadioButton x:Name="p2col2" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5D79A" Checked="p2col2_Checked" />
             <Label>Kolor Piłki</Label>
-            <RadioButton x:Name="ballcol1" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="ballcol1_Checked" IsChecked="True" />
-            <RadioButton x:Name="ballcol2" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="ballcol2_Checked"/>
+            <RadioButton x:Name="ballcol1" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF5742" Checked="ballcol1_Checked" IsChecked="True" />
+            <RadioButton x:Name="ballcol2" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#E5D79A" Checked="ballcol2_Checked"/>
         </StackPanel>
         <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="5" Value="1" Width="100" Margin="185,158,0,0"/>
         <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prędkośc Piłki" VerticalAlignment="Top" Margin="101,160,0,0"/>

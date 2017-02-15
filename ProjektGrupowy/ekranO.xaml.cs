@@ -51,7 +51,7 @@ namespace ProjektGrupowy
                 pointLimit.Text = Convert.ToString(op.PointLimit);
                 timeLimit.Text = Convert.ToString(op.TimeLimit);
 
-                if (op.BallColor.ToString() == "#FFFFFFFF")
+                if (op.BallColor.ToString() == "#FF5742FF")
                 {
                     ballcol1.IsChecked = true;
                 }
@@ -60,7 +60,7 @@ namespace ProjektGrupowy
                     ballcol2.IsChecked = true;
                 }
 
-                if (op.P1Color.ToString() == "#FFFFFFFF")
+                if (op.P1Color.ToString() == "#FF5742FF")
                 {
                     p1col1.IsChecked = true;
                 }
@@ -69,7 +69,7 @@ namespace ProjektGrupowy
                     p1col2.IsChecked = true;
                 }
 
-                if (op.P2Color.ToString() == "#FFFFFFFF")
+                if (op.P2Color.ToString() == "#FF5742FF")
                 {
                     p2col1.IsChecked = true;
                 }
@@ -151,32 +151,32 @@ namespace ProjektGrupowy
 
         private void p1col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FF5742");
         }
 
         private void p1col2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFB208");
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#E5D79A");
         }
 
         private void p2col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FF5742");
         }
 
         private void p2col2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFB208");
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#E5D79A");
         }
 
         private void ballcol1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFFFFF");
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FF5742");
         }
 
         private void ballcol2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFB208");
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#E5D79A");
         }
     }
 }
