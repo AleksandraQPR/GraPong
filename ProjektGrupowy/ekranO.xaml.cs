@@ -67,6 +67,16 @@ namespace ProjektGrupowy
                     p1col2.IsChecked = true;
                 }
 
+                if (op.P2Color.ToString() == "#FFFFFFFF")
+                {
+                    p2col1.IsChecked = true;
+                }
+                else
+                {
+                    p2col2.IsChecked = true;
+                }
+
+
             }
         }
 
