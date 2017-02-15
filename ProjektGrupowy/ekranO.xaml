@@ -23,10 +23,10 @@
         <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="5" Value="1" Width="100" Margin="185,158,0,0"/>
         <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prędkośc Piłki" VerticalAlignment="Top" Margin="101,160,0,0"/>
 
-        <Slider x:Name="p1SpeedSlider" HorizontalAlignment="Left" Margin="185,198,0,0" VerticalAlignment="Top" ValueChanged="p1SpeedSliderValue" Minimum="10" Maximum="15" Value="10" Width="100"/>
+        <Slider x:Name="p1SpeedSlider" HorizontalAlignment="Left" Margin="185,198,0,0" VerticalAlignment="Top" ValueChanged="p1SpeedSliderValue" Minimum="5" Maximum="15" Value="5" Width="100"/>
         <TextBlock x:Name="p1SpeedLabel" HorizontalAlignment="Left" Margin="78,198,0,0" TextWrapping="Wrap" Text="Prędkość Gracza 1" VerticalAlignment="Top" />
 
-        <Slider x:Name="p2SpeedSlider" HorizontalAlignment="Left" Margin="185,232,0,0" VerticalAlignment="Top" ValueChanged="p2SpeedSliderValue" Minimum="10" Maximum="15" Value="10" Width="100" />
+        <Slider x:Name="p2SpeedSlider" HorizontalAlignment="Left" Margin="185,232,0,0" VerticalAlignment="Top" ValueChanged="p2SpeedSliderValue" Minimum="5" Maximum="15" Value="5" Width="100" />
         <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="78,232,0,0" TextWrapping="Wrap" Text="Prędkość Gracza 2" VerticalAlignment="Top" />
 
         <Button x:Name="applySettings" Content="Zatwierdź" HorizontalAlignment="Left" Margin="185,300,0,0" VerticalAlignment="Top" Click="applySettings_Click" Height="39" Width="82"/>
