@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:ProjektGrupowy"
       mc:Ignorable="d" 
       d:DesignHeight="405" d:DesignWidth="300"
-      Title="ekranO">
+      Title="ekranO" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
 
     <Grid Background="#FFFDF9F9">
         <StackPanel Margin="5,5,187,181">
