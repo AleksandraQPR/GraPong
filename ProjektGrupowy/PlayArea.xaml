@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjektGrupowy"
         mc:Ignorable="d"
         Title="Rozgrywka" Height="380" Width="580
-        " KeyDown="Window_KeyDown" ResizeMode="NoResize" Background="#FF453559">
+        " KeyDown="Window_KeyDown" ResizeMode="NoResize" Background="#FF453559" KeyUp="Window_KeyUp">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>

@@ -24,7 +24,6 @@ namespace ProjektGrupowy
         private double p1Speed;
         private double p2Speed;
         private int pointLimit;
-        private int timeLimit;
 
         const double paddleOffset = 12;
 
@@ -260,6 +259,11 @@ namespace ProjektGrupowy
                 if (goUpP > 0)
                     Canvas.SetTop(paddleRight, goUpP);
             }
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
