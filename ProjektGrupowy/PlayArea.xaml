@@ -6,13 +6,7 @@
         xmlns:local="clr-namespace:ProjektGrupowy"
         mc:Ignorable="d"
         Title="Rozgrywka" Height="380" Width="580
-        " KeyDown="Window_KeyDown" ResizeMode="NoResize">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="White" Offset="0.627"/>
-        </LinearGradientBrush>
-    </Window.Background>
+        " KeyDown="Window_KeyDown" ResizeMode="NoResize" Background="#FF453559">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -22,15 +16,15 @@
             <RowDefinition/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20" Foreground="#FFCD3131"/>
+        <ProgressBar x:Name="progressBar" Grid.Column="1" Grid.Row="2" Height="15" Width="460" HorizontalAlignment="Left" Grid.ColumnSpan="2" Margin="0,13" Maximum="60" Minimum="20" Foreground="#FFFF5742"/>
         <Canvas x:Name="areaOfGame" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Ellipse x:Name="ball" Fill="#FFA64131" Height="15" Canvas.Left="234" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle x:Name="paddleLeft" Fill="#FFA64131" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <Rectangle x:Name="paddleRight" Fill="#FFA64131" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="125" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="216" Canvas.Top="26" HorizontalAlignment="Left"/>
-            <TextBlock x:Name="GameOverInfo" TextWrapping="Wrap" Text="Koniec Gry" FontWeight="Bold" FontSize="36" VerticalAlignment="Center" Foreground="#FFB7DEB1" Panel.ZIndex="50" Width="259" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="150" Canvas.Top="103" HorizontalAlignment="Left" Visibility="Hidden"/>
+            <Ellipse x:Name="ball" Fill="#FFE5D79A" Height="15" Canvas.Left="234" Canvas.Top="155" Width="15" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleLeft" Fill="#FFE5D79A" Height="50" Canvas.Left="10" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Rectangle x:Name="paddleRight" Fill="#FFE5D79A" Height="50" Canvas.Left="554" Canvas.Top="130" Width="8" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="resultPointers" TextWrapping="Wrap" Text=" 0 : 0 " FontWeight="Bold" FontSize="20" VerticalAlignment="Center" Foreground="#FFE5D79A" Panel.ZIndex="50" Width="125" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="216" Canvas.Top="26" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="GameOverInfo" TextWrapping="Wrap" Text="Koniec Gry" FontWeight="Bold" FontSize="36" VerticalAlignment="Center" Foreground="#FFE5D79A" Panel.ZIndex="50" Width="259" Padding="2" RenderTransformOrigin="0.828,0.658" TextAlignment="Center" Canvas.Left="150" Canvas.Top="103" HorizontalAlignment="Left" Visibility="Hidden"/>
         </Canvas>
-        <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFA0CB97" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,8"/>
+        <Label x:Name="label" Content="CZAS GRY" Grid.Row="2" Background="#FFE5D79A" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,8"/>
 
     </Grid>
 </Window>
