@@ -29,9 +29,9 @@ namespace ProjektGrupowy
             tmpop = new Options();
             InitializeComponent();
 
-            ballSpeedSlider.Value = tmpop.BallSpeed;
-            p1SpeedSlider.Value = tmpop.P1Speed;
-            p2SpeedSlider.Value = tmpop.P2Speed;
+           // ballSpeedSlider.Value = tmpop.BallSpeed;
+            //p1SpeedSlider.Value = tmpop.P1Speed;
+            //p2SpeedSlider.Value = tmpop.P2Speed;
 
         }
 
@@ -45,6 +45,40 @@ namespace ProjektGrupowy
             set
             {
                 op = value;
+                ballSpeedSlider.Value = op.BallSpeed;
+                p1SpeedSlider.Value = op.P1Speed;
+                p2SpeedSlider.Value = op.P2Speed;
+                pointLimit.Text = Convert.ToString(op.PointLimit);
+                timeLimit.Text = Convert.ToString(op.TimeLimit);
+
+                if (op.BallColor.ToString() == "#FFFFFFFF")
+                {
+                    ballcol1.IsChecked = true;
+                }
+                else
+                {
+                    ballcol2.IsChecked = true;
+                }
+
+                if (op.P1Color.ToString() == "#FFFFFFFF")
+                {
+                    p1col1.IsChecked = true;
+                }
+                else
+                {
+                    p1col2.IsChecked = true;
+                }
+
+                if (op.P2Color.ToString() == "#FFFFFFFF")
+                {
+                    p2col1.IsChecked = true;
+                }
+                else
+                {
+                    p2col2.IsChecked = true;
+                }
+
+
             }
         }
 
