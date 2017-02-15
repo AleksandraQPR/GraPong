@@ -41,10 +41,15 @@ namespace ProjektGrupowy
         System.Windows.Threading.DispatcherTimer ballTimer;
         System.Windows.Threading.DispatcherTimer gameTimer;
 
+        System.Windows.Threading.DispatcherTimer paddleLeftUpTimer;
+        System.Windows.Threading.DispatcherTimer paddleLeftDownTimer;
+        System.Windows.Threading.DispatcherTimer paddleRightUpTimer;
+        System.Windows.Threading.DispatcherTimer paddleRightDownTimer;
+
         private int pointLeft = 0;
         private int pointRight = 0;
 
-        public PlayArea(double ballSpeed, double p1Speed, double p2Speed, 
+        public PlayArea(double ballSpeed, double p1Speed, double p2Speed,
             Color ballColor, Color p1Color, Color p2Color, int pointLimit, int timeLimit)
         {
             InitializeComponent();
@@ -59,8 +64,12 @@ namespace ProjektGrupowy
 
             CreatingGameTimer();
             CraatingMovingBallTimer();
-            this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
+            CraatingMovingUpLeftPaddelTimer();
+            CraatingMovingDownLeftPaddelTimer();
+            CraatingMovingDownRightPaddelTimer();
+            CraatingMovingUpRightPaddelTimer();
 
+            this.Loaded += ChallengePage_Loaded;    // wczytanie strony, aby można było pobrać parametry kontrolek
         }
 
         private void CreatingGameTimer()
@@ -89,6 +98,62 @@ namespace ProjektGrupowy
             SetStartPositionOfPaddels();
             StartMovingBall();
             gameTimer.Start();
+        }
+
+        private void CraatingMovingDownLeftPaddelTimer()
+        {
+            paddleLeftDownTimer = new System.Windows.Threading.DispatcherTimer();
+            paddleLeftDownTimer.Tick += new EventHandler(paddleLeftDownTimer_Tick);
+            paddleLeftDownTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+        }
+
+        private void paddleLeftDownTimer_Tick(object sender, EventArgs e)
+        {
+            double goDownL = Canvas.GetTop(paddleLeft) + p1Speed;
+            if (goDownL < (areaOfGame.ActualHeight - paddleLeft.ActualHeight))
+                Canvas.SetTop(paddleLeft, goDownL);
+        }
+
+        private void CraatingMovingUpLeftPaddelTimer()
+        {
+            paddleLeftUpTimer = new System.Windows.Threading.DispatcherTimer();
+            paddleLeftUpTimer.Tick += new EventHandler(paddleLeftUpTimer_Tick);
+            paddleLeftUpTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+        }
+
+        private void paddleLeftUpTimer_Tick(object sender, EventArgs e)
+        {
+            double goUpL = Canvas.GetTop(paddleLeft) - p1Speed;
+            if (goUpL > 0)
+                Canvas.SetTop(paddleLeft, goUpL);
+        }
+
+        private void CraatingMovingDownRightPaddelTimer()
+        {
+            paddleRightDownTimer = new System.Windows.Threading.DispatcherTimer();
+            paddleRightDownTimer.Tick += new EventHandler(paddleRightDownTimer_Tick);
+            paddleRightDownTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+        }
+
+        private void paddleRightDownTimer_Tick(object sender, EventArgs e)
+        {
+            double goDownP = Canvas.GetTop(paddleRight) + p2Speed;
+            if (goDownP < (areaOfGame.ActualHeight - paddleRight.ActualHeight))
+                Canvas.SetTop(paddleRight, goDownP);
+        }
+
+        private void CraatingMovingUpRightPaddelTimer()
+        {
+            paddleRightUpTimer = new System.Windows.Threading.DispatcherTimer();
+            paddleRightUpTimer.Tick += new EventHandler(paddleRightUpTimer_Tick);
+            paddleRightUpTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);   // czas w milisekundach
+        }
+
+        private void paddleRightUpTimer_Tick(object sender, EventArgs e)
+        {
+            double goUpP = Canvas.GetTop(paddleRight) - p2Speed;
+            if (goUpP > 0)
+                Canvas.SetTop(paddleRight, goUpP);
         }
 
         private void SetStartPositionOfPaddels()
@@ -137,7 +202,7 @@ namespace ProjektGrupowy
         {
             setNewPosition();
 
-            if (goX > 0 && goX < areaOfGame.ActualWidth - ball.ActualWidth && goY > 0 && 
+            if (goX > 0 && goX < areaOfGame.ActualWidth - ball.ActualWidth && goY > 0 &&
                 goY < areaOfGame.ActualHeight - ball.ActualHeight)
             {
                 if (ColisionDetectionLeft(paddleLeft, ball) == true)
@@ -154,7 +219,7 @@ namespace ProjektGrupowy
                 Canvas.SetLeft(ball, goX);
                 Canvas.SetTop(ball, goY);
             }
-            
+
             else if (goX <= 0)
             {
                 StopMovingBall();
@@ -179,7 +244,7 @@ namespace ProjektGrupowy
             ballTimer.Stop();
         }
 
-       private bool ColisionDetectionLeft(Rectangle paddle, Ellipse ball)
+        private bool ColisionDetectionLeft(Rectangle paddle, Ellipse ball)
         {
             double paddleBottom = Canvas.GetTop(paddle) + paddle.Height;
             double paddleTop = Canvas.GetTop(paddle);
@@ -234,36 +299,43 @@ namespace ProjektGrupowy
             // Ruch na dół lewej paletki
             if (e.Key == Key.S)
             {
-                double goDownL = Canvas.GetTop(paddleLeft) + p1Speed;
-                if (goDownL < (areaOfGame.ActualHeight - paddleLeft.ActualHeight))
-                    Canvas.SetTop(paddleLeft, goDownL);
+                paddleLeftDownTimer.Start();
             }
             // Ruch do góry lewej paletki
             if (e.Key == Key.W)
             {
-                double goUpL = Canvas.GetTop(paddleLeft) - p1Speed;
-                if (goUpL > 0)
-                    Canvas.SetTop(paddleLeft, goUpL);
+                paddleLeftUpTimer.Start();
             }
             // Ruch na dół prawej paletki
             if (e.Key == Key.Down)
             {
-                double goDownP = Canvas.GetTop(paddleRight) + p2Speed;
-                if (goDownP < (areaOfGame.ActualHeight - paddleRight.ActualHeight))
-                    Canvas.SetTop(paddleRight, goDownP);
+                paddleRightDownTimer.Start();
             }
             // Ruch do góry prawej paletki
             if (e.Key == Key.Up)
             {
-                double goUpP = Canvas.GetTop(paddleRight) - p2Speed;
-                if (goUpP > 0)
-                    Canvas.SetTop(paddleRight, goUpP);
+                paddleRightUpTimer.Start();
             }
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-
-        }
+            if (e.Key == Key.S)
+            {
+                paddleLeftDownTimer.Stop();
+            }
+            if (e.Key == Key.W)
+            {
+                paddleLeftUpTimer.Stop();
+            }
+            if (e.Key == Key.Down)
+            {
+                paddleRightDownTimer.Stop();
+            }
+            if (e.Key == Key.Up)
+            {
+                paddleRightUpTimer.Stop();
+            }
+         }
     }
 }
