@@ -20,7 +20,7 @@
             <RadioButton x:Name="ballcol1" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="ballcol1_Checked" IsChecked="True" />
             <RadioButton x:Name="ballcol2" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="ballcol2_Checked"/>
         </StackPanel>
-        <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" Margin="185,158,0,0"/>
+        <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="5" Value="1" Width="100" Margin="185,158,0,0"/>
         <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prędkośc Piłki" VerticalAlignment="Top" Margin="101,160,0,0"/>
 
         <Slider x:Name="p1SpeedSlider" HorizontalAlignment="Left" Margin="185,198,0,0" VerticalAlignment="Top" ValueChanged="p1SpeedSliderValue" Minimum="10" Maximum="15" Value="10" Width="100"/>
