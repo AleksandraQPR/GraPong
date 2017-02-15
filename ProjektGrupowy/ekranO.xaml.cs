@@ -48,6 +48,15 @@ namespace ProjektGrupowy
                 ballSpeedSlider.Value = op.BallSpeed;
                 p1SpeedSlider.Value = op.P1Speed;
                 p2SpeedSlider.Value = op.P2Speed;
+                
+                if (op.BallColor.ToString() == "#FFFFFFFF")
+                {
+                    ballcol1.IsChecked = true;
+                }
+                else
+                {
+                    ballcol2.IsChecked = true;
+                }
 
             }
         }
