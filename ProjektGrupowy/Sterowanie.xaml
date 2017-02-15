@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Sterowanie" Height="350" Width="525">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" TextWrapping="Wrap" Text="habababababaab babababba zasady gry albo cos w ten desen" VerticalAlignment="Top" Width="498"/>
-        <Image x:Name="stery" HorizontalAlignment="Left" Height="148" Margin="29,154,0,0" VerticalAlignment="Top" Width="273" Source="stery.jpg"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="498"><Run Text="Celem gry jest przede wszystkim dobra zabawa!"/><LineBreak/><Run/><LineBreak/><Run Text="Gra polega na zdobyciu większej ilości punktów od przeciwnika."/><LineBreak/><Run Text="Limit punktów oraz ograniczenie czasu gry ustawisz w opcjach gry, oraz wiele innych opcji!"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Text="Udanej zabawy :)"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <Image x:Name="stery" HorizontalAlignment="Left" Height="165" Margin="29,137,0,0" VerticalAlignment="Top" Width="313" Source="stery.jpg"/>
         <Button x:Name="button" Content="ok, rozumiem!" HorizontalAlignment="Left" Height="34" Margin="381,251,0,0" VerticalAlignment="Top" Width="94" Click="button_Click"/>
 
     </Grid>
