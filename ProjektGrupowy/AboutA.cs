@@ -19,7 +19,7 @@ namespace ProjektGrupowy
             this.labelVersion.Text = "Aleksandra Kuper";
             this.labelCopyright.Text = "Agata Socha";
             this.labelCompanyName.Text = "Robert Szulist";
-            this.textBoxDescription.Text = "dupka";
+            
         }
 
         #region Assembly Attribute Accessors
