@@ -20,6 +20,8 @@ namespace ProjektGrupowy
     /// </summary>
     public partial class PlayArea : Window
     {
+        private int pointLimit = 5;
+
         const double paddleOffset = 12;
 
         Random randomX = new Random();      // losowy wybór początkowego kierunku piłki na osi X
@@ -58,7 +60,7 @@ namespace ProjektGrupowy
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             progressBar.Value += 1;
-            if (progressBar.Value >= progressBar.Maximum)
+            if (progressBar.Value >= progressBar.Maximum || pointLeft >= pointLimit || pointRight >= pointLimit)
                 StopTheGame();
         }
 
