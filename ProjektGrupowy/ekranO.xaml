@@ -9,34 +9,34 @@
       Title="ekranO" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
 
     <Grid Background="#FFFDF9F9">
-        <StackPanel Margin="5,5,187,181">
-            <Label>Player 1 Color</Label>
+        <StackPanel Margin="5,5,187,200">
+            <Label>Kolor Gracza 1</Label>
             <RadioButton x:Name="p1col1" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="p1col1_Checked" IsChecked="True" />
             <RadioButton x:Name="p1col2" GroupName="p1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="p1col2_Checked"/>
-            <Label>Player 2 Color</Label>
+            <Label>Kolor Gracza 2</Label>
             <RadioButton x:Name="p2col1" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="p2col1_Checked" IsChecked="True"/>
             <RadioButton x:Name="p2col2" GroupName="p2" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="p2col2_Checked" />
-            <Label>Ball Color</Label>
+            <Label>Kolor Piłki</Label>
             <RadioButton x:Name="ballcol1" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Checked="ballcol1_Checked" IsChecked="True" />
             <RadioButton x:Name="ballcol2" GroupName="b" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFB208" Checked="ballcol2_Checked"/>
         </StackPanel>
         <Slider x:Name="ballSpeedSlider" HorizontalAlignment="Left" VerticalAlignment="Top" ValueChanged="ballSpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" Margin="185,158,0,0"/>
-        <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ball Speed" VerticalAlignment="Top" Margin="110,160,0,0"/>
+        <TextBlock x:Name="ballSpeedLabel" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Prędkośc Piłki" VerticalAlignment="Top" Margin="101,160,0,0"/>
 
         <Slider x:Name="p1SpeedSlider" HorizontalAlignment="Left" Margin="185,198,0,0" VerticalAlignment="Top" ValueChanged="p1SpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100"/>
-        <TextBlock x:Name="p1SpeedLabel" HorizontalAlignment="Left" Margin="90,198,0,0" TextWrapping="Wrap" Text="Player1 Speed" VerticalAlignment="Top" />
+        <TextBlock x:Name="p1SpeedLabel" HorizontalAlignment="Left" Margin="78,198,0,0" TextWrapping="Wrap" Text="Prędkość Gracza 1" VerticalAlignment="Top" />
 
         <Slider x:Name="p2SpeedSlider" HorizontalAlignment="Left" Margin="185,232,0,0" VerticalAlignment="Top" ValueChanged="p2SpeedSliderValue" Minimum="1" Maximum="10" Value="1" Width="100" />
-        <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="90,232,0,0" TextWrapping="Wrap" Text="Player2 Speed" VerticalAlignment="Top" />
+        <TextBlock x:Name="p2SpeedLabel" HorizontalAlignment="Left" Margin="78,232,0,0" TextWrapping="Wrap" Text="Prędkość Gracza 2" VerticalAlignment="Top" />
 
-        <Button x:Name="applySettings" Content="Apply" HorizontalAlignment="Left" Margin="185,300,0,0" VerticalAlignment="Top" Click="applySettings_Click" Height="39" Width="82"/>
-        <Button x:Name="discardSettings" Content="Cancel" HorizontalAlignment="Left" Margin="23,300,0,0" VerticalAlignment="Top" Click="discardSettings_Click" Height="39" Width="73"/>
+        <Button x:Name="applySettings" Content="Zatwierdź" HorizontalAlignment="Left" Margin="185,300,0,0" VerticalAlignment="Top" Click="applySettings_Click" Height="39" Width="82"/>
+        <Button x:Name="discardSettings" Content="Anuluj" HorizontalAlignment="Left" Margin="23,300,0,0" VerticalAlignment="Top" Click="discardSettings_Click" Height="39" Width="73"/>
 
 
         <TextBox x:Name="timeLimit" HorizontalAlignment="Left" Margin="248,47,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top"/>
         <TextBox x:Name="pointLimit" HorizontalAlignment="Left" Margin="248,12,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
-        <TextBlock x:Name="timeLimitLabel" Text="Time limit" Margin="162,48,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" />
-        <TextBlock x:Name="pointLimitLabel" Text="Point limit" Margin="162,13,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top"  />
+        <TextBlock x:Name="timeLimitLabel" Text="Limit Czasowy" Margin="162,48,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top" />
+        <TextBlock x:Name="pointLimitLabel" Text="Limit Punktowy" Margin="156,13,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top"  />
 
     </Grid>
 </Window>
