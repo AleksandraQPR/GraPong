@@ -29,9 +29,9 @@ namespace ProjektGrupowy
             tmpop = new Options();
             InitializeComponent();
 
-            ballSpeedSlider.Value = tmpop.BallSpeed;
-            p1SpeedSlider.Value = tmpop.P1Speed;
-            p2SpeedSlider.Value = tmpop.P2Speed;
+           // ballSpeedSlider.Value = tmpop.BallSpeed;
+            //p1SpeedSlider.Value = tmpop.P1Speed;
+            //p2SpeedSlider.Value = tmpop.P2Speed;
 
         }
 
@@ -45,6 +45,10 @@ namespace ProjektGrupowy
             set
             {
                 op = value;
+                ballSpeedSlider.Value = op.BallSpeed;
+                p1SpeedSlider.Value = op.P1Speed;
+                p2SpeedSlider.Value = op.P2Speed;
+
             }
         }
 
