@@ -48,7 +48,9 @@ namespace ProjektGrupowy
                 ballSpeedSlider.Value = op.BallSpeed;
                 p1SpeedSlider.Value = op.P1Speed;
                 p2SpeedSlider.Value = op.P2Speed;
-                
+                pointLimit.Text = Convert.ToString(op.PointLimit);
+                timeLimit.Text = Convert.ToString(op.TimeLimit);
+
                 if (op.BallColor.ToString() == "#FFFFFFFF")
                 {
                     ballcol1.IsChecked = true;
