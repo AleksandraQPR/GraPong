@@ -151,32 +151,32 @@ namespace ProjektGrupowy
 
         private void p1col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FF5742");
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFDF6C4F");
         }
 
         private void p1col2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#E5D79A");
+            tmpop.P1Color = (Color)ColorConverter.ConvertFromString("#FFFCFCFC");
         }
 
         private void p2col1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FF5742");
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFDF6C4F");
         }
 
         private void p2col2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#E5D79A");
+            tmpop.P2Color = (Color)ColorConverter.ConvertFromString("#FFFCFCFC");
         }
 
         private void ballcol1_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FF5742");
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFDF6C4F");
         }
 
         private void ballcol2_Checked(object sender, RoutedEventArgs e)
         {
-            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#E5D79A");
+            tmpop.BallColor = (Color)ColorConverter.ConvertFromString("#FFFCFCFC");
         }
     }
 }
